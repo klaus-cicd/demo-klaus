@@ -1,0 +1,16 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /
+    username: silas
+    password: 123456
+    listener:
+      simple:
+        acknowledge-mode: manual
+        retry:
+          enabled: true
+          max-attempts: 5
+          initial-interval: 2000
+          multiplier: 2
+          max-interval: 10000

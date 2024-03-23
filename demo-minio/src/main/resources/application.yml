@@ -1,0 +1,8 @@
+server:
+  port: 9191
+
+minio:
+  endpoint: http:127.0.0.1:29000
+  bucket-name: dev
+  access-key: 06j1XbBgqs3p7pU7Z4Wh
+  secret-key: mceboKHNsnHKKfagR6JiaZo4MQDN6G8cvU3OZvM3

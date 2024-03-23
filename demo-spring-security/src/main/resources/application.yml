@@ -1,0 +1,14 @@
+
+
+mybatis-plus:
+  # \u914D\u7F6E\u5B9E\u4F53\u7C7B\u7B80\u79F0\uFF0C\u591A\u4E2Apackage\u7528\u9017\u53F7\u6216\u8005\u5206\u53F7\u5206\u9694
+  typeAliasesPackage: com.silas.demo.comm.entity
+  # \u914D\u7F6Emapper\u6587\u4EF6\u5730\u5740, \u4E0E@MapperScan\u662F\u5426\u53EF\u4EE5\u4E92\u76F8\u66FF\u6362 ?
+  mapper-locations:
+    - classpath*:com/silas/demo/mp/mapper/*.xml
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo_spring_security?serverTimezone=GMT%2b8
+    username: root
+    password: 123456

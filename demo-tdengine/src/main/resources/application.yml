@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.taosdata.jdbc.rs.RestfulDriver
+    url: jdbc:TAOS-RS://127.0.0.1:6041/default
+    username: root
+    password: taosdata
+
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.silas.demo.tdengine.entity

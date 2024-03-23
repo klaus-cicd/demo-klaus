@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    dynamic:
+      mysql:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url-prefix: jdbc:mysql://localhost:3306
+        username: root
+        password: 123456
+        default-db-name: demo
+
+  # flyway db
+  flyway:
+    # 是否启用, 默认为true
+    enabled: false
+    # 脚本目录, 多个路径使用逗号分隔, 默认为 db/migration
+    locations: db/migration
+    # 用户保存DB版本信息的数据库连接信息
+    url: jdbc:mysql://localhost:3306/demo
+    user: root
+    password: 123456
+    # 用于保存db版本信息的表名称, 默认为: flyway_schema_history
+    table: flyway_schema_history
+
+    # 新的环境, 数据库有数据,且没有`flyway_schema_history`表时,是否执行迁移脚本
+    # true: 生成`flyway_schema_history`表, 并完成所有迁移
+    # false: 在启动时会报错, 并停止迁移
+    baseline-on-migrate: true
+    # 与 baseline-on-migrate: true 搭配使用
+    baseline-version: 0
+    encoding: UTF-8
+    # 在迁移时, 是否检验旧脚本是否有变更
+    validate-on-migrate: true
+    # 检测迁移脚本路径是否存在, 不存在则抛出异常
+    check-location: false
+    # 是否允许迁移无序运行, 开发环境最好开启 outOfOrder, 生产环境关闭 outOfOrder .
+    out-of-order: false
+    # 禁止清理数据库表
+    clean-disabled: true
+
+

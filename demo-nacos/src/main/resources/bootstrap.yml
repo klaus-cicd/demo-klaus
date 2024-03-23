@@ -1,0 +1,71 @@
+server:
+  port: 8081
+---
+spring:
+  profiles:
+    active: local
+  application:
+    name: klaus-demo-nacos
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+      config:
+        namespace: klaus
+        group: ${spring.profiles.active}
+        # 默认是${spring.application.name}, 这里没写后缀时nacos端后缀可写可不写; 如果这里显示声明了后缀, nacos也一定要加上后缀
+#        name: ${spring.application.name}
+        file-extension: yml
+        shared-configs:
+          # 这里的data-id在nacos一定要带格式后缀, 而在这份配置文件内可带可不带, 默认就是${spring.cloud.config.file-extension}
+          - data-id: common
+            group: ${spring.profiles.active}
+            refresh: true
+      discovery:
+        namespace: klaus
+        group: ${spring.profiles.active}
+---
+spring:
+  profiles:
+    active: dev
+  application:
+    name: klaus-demo-nacos
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+      config:
+        group: ${spring.profiles.active}
+        namespace: klaus
+        file-extension: yml
+        shared-configs:
+          - data-id: common.yml
+            group: ${spring.profiles.active}
+            refresh: true
+      discovery:
+        namespace: klaus
+        group: ${spring.profiles.active}
+---
+spring:
+  profiles:
+    active: test
+  application:
+    name: klaus-demo-nacos
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+      config:
+        group: ${spring.profiles.active}
+        namespace: klaus
+        file-extension: yml
+        shared-configs:
+          - data-id: common.yml
+            group: ${spring.profiles.active}
+            refresh: true
+      discovery:
+        namespace: klaus
+        group: ${spring.profiles.active}
