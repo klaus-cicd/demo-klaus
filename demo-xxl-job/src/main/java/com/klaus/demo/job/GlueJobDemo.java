@@ -18,6 +18,7 @@ public class GlueJobDemo extends IJobHandler {
 
     @Override
     public void execute() throws Exception {
+        // XxlJobExecutor.registJobHandler("GlueJobDemo", this);
         log.info("GlueJobDemo#execute");
     }
 

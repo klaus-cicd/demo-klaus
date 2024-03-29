@@ -1,0 +1,25 @@
+mybatis-plus:
+  # \u914D\u7F6E\u5B9E\u4F53\u7C7B\u7B80\u79F0\uFF0C\u591A\u4E2Apackage\u7528\u9017\u53F7\u6216\u8005\u5206\u53F7\u5206\u9694
+  typeAliasesPackage: com.klaus.demo.comm.entity
+  # \u914D\u7F6Emapper\u6587\u4EF6\u5730\u5740, \u4E0E@MapperScan\u662F\u5426\u53EF\u4EE5\u4E92\u76F8\u66FF\u6362 ?
+  mapper-locations:
+    - classpath*:com/klaus/demo/mp/mapper/*.xml
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    druid:
+      # 初始化线程池大小
+      initial-size: 10
+      # 最小线程数
+      min-idle: 5
+      # 最大线程数
+      max-active: 50
+      # 最长等待时间ms(内网800, 外网1200(三次握手))
+      max-wait: 30000
+      # 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效
+      test-while-idle: true
+      # 用来检测连接是否有效的sql，要求是一个查询语句。如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会其作用。
+      validation-query: SELECT 1

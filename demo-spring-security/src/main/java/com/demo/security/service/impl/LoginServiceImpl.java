@@ -30,8 +30,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public String login(User user) {
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
-        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
+        Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
         if (Objects.isNull(authenticate)) {
             throw new RuntimeException("username or password is incorrect!");
         }
@@ -57,5 +56,6 @@ public class LoginServiceImpl implements LoginService {
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         Long userid = loginUser.getUser().getId();
         RedisCache.del(String.format(RedisKey.JWT_TOKEN, userid));
+        SecurityContextHolder.clearContext();
     }
 }

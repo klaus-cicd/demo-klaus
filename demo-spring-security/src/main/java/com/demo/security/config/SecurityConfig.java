@@ -79,7 +79,9 @@ public class SecurityConfig {
                 )
                 .cors()
                 .and()
-                .userDetailsService(userDetailsServiceImpl).build();
+                .userDetailsService(userDetailsServiceImpl)
+                .addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class)
+                .build();
     }
 
     @Bean

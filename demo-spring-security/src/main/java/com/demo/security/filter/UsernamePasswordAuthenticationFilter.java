@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationServiceException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 
@@ -30,10 +31,9 @@ public class UsernamePasswordAuthenticationFilter extends org.springframework.se
                 username = username == null ? "" : username.trim();
                 password = password == null ? "" : password;
 
-                // UsernamePasswordAuthenticationToken authRequest = UsernamePasswordAuthenticationToken.unauthenticated(username, password);
-                // super.setDetails(request, authRequest);
-                // return super.getAuthenticationManager().authenticate(authRequest);
-                return null;
+                UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username, password);
+                super.setDetails(request, authRequest);
+                return super.getAuthenticationManager().authenticate(authRequest);
             } catch (IOException e) {
                 throw new AuthenticationServiceException("AttemptAuthentication error");
             }

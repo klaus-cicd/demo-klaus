@@ -36,6 +36,7 @@
         <module>demo-netty</module>
         <module>demo-jpa</module>
         <module>demo-redis</module>
+        <module>demo-i18n</module>
     </modules>
 
     <properties>
