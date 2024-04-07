@@ -37,6 +37,7 @@
         <module>demo-jpa</module>
         <module>demo-redis</module>
         <module>demo-i18n</module>
+        <module>demo-prometheus</module>
     </modules>
 
     <properties>
