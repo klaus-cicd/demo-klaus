@@ -38,6 +38,10 @@
         <module>demo-redis</module>
         <module>demo-i18n</module>
         <module>demo-prometheus</module>
+        <module>demo-code-generator</module>
+        <module>demo-mqtt</module>
+        <module>demo-tdengine-orm</module>
+        <module>demo-kafka</module>
     </modules>
 
     <properties>
@@ -72,7 +76,11 @@
                 <artifactId>demo-comm</artifactId>
                 <version>${klaus-demo.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.klaus.tdengineorm</groupId>
+                <artifactId>tdengine-orm-spring-boot-starter</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
             <dependency>
                 <groupId>com.mysql</groupId>
                 <artifactId>mysql-connector-j</artifactId>
