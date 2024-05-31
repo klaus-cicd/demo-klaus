@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: com.taosdata.jdbc.rs.RestfulDriver
+    url: jdbc:TAOS-RS://192.168.110.201:6041/sg_offshore
+#    url: jdbc:TAOS-RS://192.168.100.115:6041/vessel_sg_10086
+    username: root
+    password: taosdata
+td-orm:
+  log-level: info
