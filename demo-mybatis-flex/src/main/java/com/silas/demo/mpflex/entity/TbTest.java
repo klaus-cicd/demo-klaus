@@ -21,6 +21,5 @@ public class TbTest {
     private Long id;
 
     private String content;
-
     private LocalDateTime time;
 }

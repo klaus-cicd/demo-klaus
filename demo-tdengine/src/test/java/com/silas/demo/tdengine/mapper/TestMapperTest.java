@@ -13,14 +13,13 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
-import java.util.List;
 
 @Slf4j
 @SpringBootTest
 class TestMapperTest {
 
-    @Resource
-    private TdMetersMapper tdMetersMapper;
+    // @Resource
+    // private TdMetersMapper tdMetersMapper;
     @Resource
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     @Resource
@@ -37,8 +36,8 @@ class TestMapperTest {
         tdMeters.setPhase(222d);
         tdMeters.setCurrent(333f);
 
-        int result = tdMetersMapper.tdSave(tdMeters);
-        log.info("Result: {}", result == 1);
+        // int result = tdMetersMapper.tdSave(tdMeters);
+        // log.info("Result: {}", result == 1);
     }
 
 
@@ -91,7 +90,7 @@ class TestMapperTest {
         tdMeters.setPhase(222d);
         tdMeters.setCurrent(333f);
 
-        log.info("dynamicTbNameInsert result: {}", tdMetersMapper.insert(tdMeters));
+        // log.info("dynamicTbNameInsert result: {}", tdMetersMapper.insert(tdMeters));
     }
 
 
@@ -101,8 +100,8 @@ class TestMapperTest {
                 // 设置动态表名
                 .setTableName(name -> name + "_001");
 
-        List<TdMeters> tdMeters = tdMetersMapper.selectList(tdMetersMPJLambdaWrapper);
-        log.info("result: {}", tdMeters);
+        // List<TdMeters> tdMeters = tdMetersMapper.selectList(tdMetersMPJLambdaWrapper);
+        // log.info("result: {}", tdMeters);
     }
 
 

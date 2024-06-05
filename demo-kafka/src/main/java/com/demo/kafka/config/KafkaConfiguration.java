@@ -1,5 +1,6 @@
 package com.demo.kafka.config;
 
+import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -56,6 +57,28 @@ public class KafkaConfiguration {
 
     @Value("${spring.kafka.consumer.auto-commit-interval}")
     private Integer autoCommitInterval;
+
+    /**
+     * 创建一个名为testtopic的Topic并设置分区数为8，分区副本数为2
+     *
+     * @return {@link NewTopic }
+     */
+    @Bean
+    public NewTopic initialTopic() {
+        return new NewTopic("topic_test", 3, (short) 2);
+    }
+
+
+    /**
+     * 如果要修改分区数，只需修改配置值重启项目即可
+     * 修改分区数并不会导致数据的丢失，但是分区数只能增大不能减小
+     *
+     * @return {@link NewTopic }
+     */
+    @Bean
+    public NewTopic updateTopic() {
+        return new NewTopic("topic_test_batch", 10, (short) 2);
+    }
 
 
     /**

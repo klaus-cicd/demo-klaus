@@ -14,6 +14,7 @@
     <modules>
         <module>demo-netty-server</module>
         <module>demo-netty-client</module>
+        <module>demo-netty-base</module>
     </modules>
 
     <properties>

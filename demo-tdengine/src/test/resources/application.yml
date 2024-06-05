@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    driver-class-name: com.taosdata.jdbc.rs.RestfulDriver
+    url: jdbc:TAOS-RS://192.168.110.201:6041/test
+    username: root
+    password: taosdata
+td-orm:
+  log: info

@@ -1,9 +1,9 @@
 package com.silas.demo.helloworld;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.klaus.demo.helloworld.controller.GzipController;
+import com.klaus.demo.helloworld.util.TestUtil;
 import com.klaus.fd.utils.BeanUtil;
-import com.silas.demo.helloworld.controller.GzipController;
-import com.silas.demo.helloworld.util.TestUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

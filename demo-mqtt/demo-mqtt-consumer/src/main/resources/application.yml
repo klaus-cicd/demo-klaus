@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: demo-mqtt-consumer
+
+mqtt:
+  username: klaus
+  password: klaus
+  url: tcp://127.0.0.1:1883
+  default:
+    topic: testtopic/#
+
+server:
+  port: 8082

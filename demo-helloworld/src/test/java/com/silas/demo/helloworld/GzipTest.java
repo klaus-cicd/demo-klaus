@@ -3,7 +3,7 @@ package com.silas.demo.helloworld;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson2.JSON;
-import com.silas.demo.helloworld.util.GzipUtil;
+import com.klaus.demo.helloworld.util.GzipUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

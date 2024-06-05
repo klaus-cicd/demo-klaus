@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo-mqtt-provider
+
+mqtt:
+  username: klaus
+  password: klaus
+  url: tcp://127.0.0.1:1883
+  default:
+    topic: test/#
+server:
+  port: 8081

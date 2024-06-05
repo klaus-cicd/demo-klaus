@@ -32,6 +32,15 @@
             <groupId>com.klaus.fd</groupId>
             <artifactId>fast-dev-web</artifactId>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.wendykierp/JTransforms -->
+        <dependency>
+            <groupId>com.github.wendykierp</groupId>
+            <artifactId>JTransforms</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>

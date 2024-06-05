@@ -18,8 +18,8 @@ import java.security.*;
 @Slf4j
 public class CustomRsaUtil {
 
-    private static String publicKeyPath = "/Users/silas/.ssh/id_rsa.pub";
-    private static String privateKeyPath = "/Users/silas/.ssh/id_rsa";
+    private static String publicKeyPath = "/Users/klaus/.ssh/id_rsa.pub";
+    private static String privateKeyPath = "/Users/klaus/.ssh/id_rsa";
 
     // public static String encrypt() {
     //     byte[] data = "Hello, World!".getBytes();
