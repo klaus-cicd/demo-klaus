@@ -1,5 +1,6 @@
 package com.klaus.demo.helloworld.controller;
 
+import com.alibaba.fastjson2.JSONObject;
 import com.fd.web.response.Result;
 import com.klaus.demo.helloworld.request.TestReq;
 import lombok.extern.slf4j.Slf4j;
@@ -33,5 +34,14 @@ public class HelloWorldController {
     @PostMapping("/req-list")
     public Result<List<String>> reqList(@RequestBody @Validated List<String> list) {
         return Result.ok(list);
+    }
+
+    @GetMapping("/json")
+    public Result<JSONObject> getJson() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "klaus");
+        jsonObject.put("age", null);
+        System.out.println(jsonObject);
+        return Result.ok(jsonObject);
     }
 }

@@ -8,10 +8,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-/**
- * @author Klaus
- */
 public class DynamicController<DTO> {
+
+
+    /**
+     * 泛型类对应的Class对象, 如果没有泛型, 则无需改属性
+     */
+    private final Class<DTO> entityClass;
+
+
+    /**
+     * 通过构成函数来指定类的泛型
+     *
+     * @param entityClass 实体类
+     */
+    public DynamicController(Class<DTO> entityClass) {
+        this.entityClass = entityClass;
+    }
 
     @ResponseBody
     public Result<Long> get(@RequestParam("id") Long id) {
