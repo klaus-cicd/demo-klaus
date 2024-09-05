@@ -1,11 +1,16 @@
 package com.demo.kafka.consumer;
 
+import com.klaus.fd.utils.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.List;
 
 /**
@@ -16,7 +21,7 @@ import java.util.List;
  */
 @Slf4j
 @Component
-public class BigDataTopicListener {
+public class KafkaConsumer {
 
 
     /**
@@ -50,4 +55,20 @@ public class BigDataTopicListener {
         log.info("收到批量数据，拉取数据量：{}，消费时间：{}ms", consumerRecords.size(), (System.currentTimeMillis() - start));
     }
 
+
+    @KafkaListener(topics = "topic_cb1")
+    public void cb1Consumer(ConsumerRecord<?, ?> record) {
+        System.out.println("topic_cb1：" + record.topic() + "**分区" + record.partition() + "**值内容" + record.value());
+    }
+
+
+    @KafkaListener(topics = "topic_cb2")
+    public void cb2Consumer(ConsumerRecord<?, ?> record) {
+        System.out.println("topic_cb2：" + record.topic() + "**分区" + record.partition() + "**值内容" + record.value());
+    }
+
+    public static void main(String[] args) {
+        System.out.println(DateUtil.nowTimestamp());
+        System.out.println(new Timestamp(System.currentTimeMillis()));
+    }
 }
