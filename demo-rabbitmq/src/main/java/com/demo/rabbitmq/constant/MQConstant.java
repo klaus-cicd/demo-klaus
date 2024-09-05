@@ -14,4 +14,6 @@ public class MQConstant {
     public static final String RETRY_ROUTING_KEY_PREFIX = "http_retry.{}";
     public static final String RETRY_ROUTING_KEY = "http_retry.#";
 
+    public static final String TOPIC_TEST = "TOPIC_TEST";
+
 }
