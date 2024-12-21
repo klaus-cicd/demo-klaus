@@ -16,4 +16,7 @@ public class MQConstant {
 
     public static final String TOPIC_TEST = "TOPIC_TEST";
 
+    public static final String DELAY_EXCHANGE = "delay_exchange";
+    public static final String DELAY_MSG_TOPIC= "delay_msg_topic";
+    public static final String DELAY_MSG_QUEUE= "delay_queue";
 }
